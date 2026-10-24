@@ -52,7 +52,7 @@ public class MainActivity extends Activity {
         return s;
     }
 
-    TextView txt(TextView t, int sp, int color, String font) {
+      <T extends TextView> T txt(T t, int sp, int color, String font) {
         t.setTextSize(sp); t.setTextColor(color);
         t.setTypeface(Typeface.create(font, Typeface.NORMAL)); return t;
     }
