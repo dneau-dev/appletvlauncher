@@ -22,7 +22,9 @@ Modifie le tableau DOCK (noms de paquets, de gauche à droite) : YouTube com.goo
 Commit : l'onglet Actions compile un nouvel APK. Télécharge l'artefact apk, puis adb install -r app-debug.apk.
 Fond d'écran
 
-Cette version est volontairement légère : fond noir uniquement, pas de fond d'écran.
+Réglages > Fond d'écran sur l'accueil : choisis avec la télécommande (aperçu en direct, OK pour valider, Retour pour annuler). Le choix est mémorisé.
+Fonds fournis : Aurore (défaut), Côte amalfitaine, Nuit bleue, Crépuscule, Océan, Braise, Noir pur.
+Ajouter ton propre fond : copie une image (1920x1080, .jpg ou .png, de préférence < 500 Ko) dans app/src/main/res/drawable-nodpi/ en la nommant bg_monfond.jpg (minuscules, chiffres, _). Elle apparaît seule dans le sélecteur après recompilation. Un voile sombre est appliqué par-dessus pour garder le texte lisible.
 
 Fermer le débogage réseau (à faire à la fin)
 
@@ -33,3 +35,6 @@ Redémarre la TV.
 Vérifie que le port est fermé : Test-NetConnection 192.168.1.22 -Port 5555 dans PowerShell doit afficher TcpTestSucceeded : False.
 
 Pour modifier la TV plus tard, il faudra réactiver le débogage.
+
+
+Style Liquid Glass : dock, boutons du haut, surbrillance de sélection et panneau des fonds utilisent un verre translucide avec reflet spéculaire et liseré lumineux (classe Glass dans MainActivity.java : lightGlass, strongGlass, darkGlass). Pas de flou réel, pour rester léger sur Android 11.
